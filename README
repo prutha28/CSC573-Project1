@@ -1,0 +1,57 @@
+
+Please find the make_client.sh and make_host.sh files attached in the folder.
+Type chmod +x name_of_file.sh to make your file executable.
+Then type sh ./name_of_file.sh to execute the file
+
+ex: 
+
+chmod +x make_server.sh
+sh ./make_server.sh
+
+chmod +x make_client.sh
+sh ./make_client.sh
+
+1. 
+	Navigate to the folder containing the .java files
+	Run the following command from within this folder for compilation.
+
+	javac MainServer.java
+
+	Run this command to run the .class file
+	java -classpath . MainServer
+
+	The Server will now start listening to incoming client requests at the predefined port 7734.
+
+2. 
+	To run the peer, run the following commands from within the folder contaiing the .java files.
+	
+	javac Peer.java
+	java -classpath . Peer 
+	
+3.
+	On the peer side , the user will be asked to enter the option of his choice 
+
+	1 : Add a new peer to the system,
+
+	2 : Look up a specific RFC ( by RFC no)
+	
+	3 : List All the RFCS avalaible with all the active peers in the system.
+	
+	4 : To Download/Get an RFC file from another peer. It will take as input from the user, (1) RFC no to download ( same as teh file 		    name), (2) the port no for the upload server (3) the host address( ip address) for the upload server.
+	
+	5. Stop the peer.
+	
+
+Assumptions Made :
+
+1. The RFC File Name is the same as the RFC No. ex: The RFC file corresponding to RFC no 900 will be "900.txt"
+
+2. When the peer adds an RFC to the system, it is assumed that that peer has a corresponding RFC file in the sourceRFC folder. The file name is <RFCName>.txt
+
+3. In order to download an RFC file from another peer, the user must know the host address( ip address) and the port of the upload server corresponding to the peer that contains that RFC File.
+
+4. When the peer downloads the RFC File, it gets saved to the downloadedRFC folder.
+
+5. When a peer joins the system, the user is first asked if it already has RFCs, if the user types "y/Y", these RFC indexes get added to the MainServer automatically.
+
+6. The IP Address/ hostname of the peer is taken as input from the user.
